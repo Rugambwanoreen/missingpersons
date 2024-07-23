@@ -1,0 +1,37 @@
+<!-- Timer to display the arrest time -->
+<div id="arrest-info">
+    <h2>Arrest Information</h2>
+    <p id="arrest-time">Time of Arrest: <span id="time-display">Not recorded</span></p>
+</div>
+
+<!-- JavaScript to handle the timer -->
+<script>
+    function updateArrestTime() {
+        const now = new Date();
+        const formattedTime = now.toLocaleString();
+        document.getElementById('time-display').textContent = formattedTime;
+    }
+
+    // Call updateArrestTime on page load
+    window.onload = function() {
+        updateArrestTime();
+    };
+
+    // Optional: Update the time every minute
+    setInterval(updateArrestTime, 60000);
+</script>
+
+<style>
+    #arrest-info {
+        padding: 20px;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    #arrest-info h2 {
+        margin-top: 0;
+    }
+    #arrest-time {
+        font-size: 1.2em;
+    }
+</style>
